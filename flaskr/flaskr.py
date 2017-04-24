@@ -5,12 +5,6 @@ from flask import Flask, request, session, g, redirect, url_for, abort, \
      render_template, flash
 
 app = Flask(__name__) # create the application instance :)
-os.chdir('C:\\Users\\Justin Yang\\PycharmProjects\\flaskr')
-conn = sqlite3.connect(r'./flaskr/flaskr.db')
-cursor = conn.cursor()
-sql = '''select * from users'''
-results = cursor.execute(sql)
-all_users = results.fetchall()
 app.config.from_object(__name__) # load config from this file , flaskr.py
 
 # Load default config and override config from an environment variable
