@@ -2,7 +2,6 @@ import threading
 from selenium import webdriver
 import flaskr
 from flaskr import app
-from browser import Browser
 
 def before_all(context):
     context.server = flaskr.flaskr

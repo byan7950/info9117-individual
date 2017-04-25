@@ -43,14 +43,14 @@ def login(context, username, password):
 def see_login_success(context):
     success_found = re.search("Login Success!", context.browser.page_source, re.IGNORECASE)
     assert success_found
-    time.sleep(0.5)
+
 
 
 @then(u'she should see a message of login failure')
 def see_login_failure(context):
     fail_found = re.search("Bad Login", context.browser.page_source, re.IGNORECASE)
     assert fail_found
-    time.sleep(0.5)
+
 
 @given(u'a user visits the login page')
 def visits_login(context):
@@ -79,5 +79,5 @@ def visit_site(context):
 @then(u'she sees a message telling her she has logged out')
 def see_logout_success(context):
     logout_success_found = re.search("You were logged out", context.browser.page_source, re.IGNORECASE)
-    assert logout_success_found
     time.sleep(0.5)
+    assert logout_success_found
